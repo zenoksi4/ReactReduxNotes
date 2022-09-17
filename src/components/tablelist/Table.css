@@ -12,7 +12,7 @@
     padding: 12px 25px;
 }
 
-.note-table tr{
+.note-table thead tr{
     background-color: #009482;
     text-align: left;
     font-weight: bold;
