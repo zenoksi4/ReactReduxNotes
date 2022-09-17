@@ -8,8 +8,10 @@ type Note = {
     content:string;
 }
 
+
 type NotesState = {
     list: Note[];
+
 }
 
 const initialState: NotesState = {
@@ -20,7 +22,8 @@ const initialState: NotesState = {
         category: 'category1',
         content: 'notes1 03.09.2022,02.09.2022'
     },
-]
+    ],
+
 }   
 
 type addNotesAction = {
@@ -44,7 +47,8 @@ const noteSlice = createSlice({
         },
         removeNote(state, action:PayloadAction<string>) {
             state.list = state.list.filter(note => note.id !== action.payload);
-        }
+        },
+
     },
 });
 
