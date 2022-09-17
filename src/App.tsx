@@ -5,6 +5,7 @@ import Table from "./components/tablelist/Table";
 function App() {
   return (
     <div className="container">
+      <Table/>
     </div>
   );
 }
