@@ -39,7 +39,7 @@ const ModalAddNote: React.FC<AddNoteModalProps> = ({active, setActive}) => {
         <Modal active={active} setActive={setActive}>
             <ModalFormWrapper>
                 <h1>Add Note</h1>
-                {valid && <span>{valid}</span>}
+                {valid && <span className='invalid-field'>{valid}</span>}
 
                 <form action="" onSubmit={(event) => (handleSubmit(event))}>
                     <label htmlFor="">Title</label><br/>

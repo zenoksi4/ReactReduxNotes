@@ -13,11 +13,13 @@ td .icon-title {
 }
 
 .text-ellipsis {
-    max-width: 150px;
+    max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
 
 .icons {
     display: flex;
@@ -28,6 +30,16 @@ td .icon-title {
 .icon {
     padding: 10px;
     color: #000000;
+}
+
+.icon:hover {
+    padding: 10px;
+    color: #676666;
+}
+
+.icon:active {
+    padding: 10px;
+    color: #adadad;
 }
 
 .icon i{

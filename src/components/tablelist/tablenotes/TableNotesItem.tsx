@@ -19,7 +19,9 @@ const TableNotesItem: React.FC<TableNotesItemProps> = ({isArchive, note}) => {
         <tr>
             <td className="note-title">
                 <div className="icon-title">
-                    {note.category === 'category1' && <i className="fa-solid fa-shop"></i>}
+                    {note.category === 'Task' && <i className="fa-solid fa-shop"></i>}
+                    {note.category === 'Random Thought' && <i className="fa-regular fa-lightbulb"></i>}
+                    {note.category === 'Idea' && <i className="fa-solid fa-head-side-virus"></i>}
                 </div>
                 {note.title}
             </td>

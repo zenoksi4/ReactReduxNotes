@@ -19,8 +19,29 @@ const initialState: NotesState = {
         id: Math.random().toString(),
         title: 'note1',
         created: new Date().toLocaleDateString('uk'),
-        category: 'category1',
+        category: 'Task',
         content: 'notes1 03.09.2022,02.09.2022'
+    },
+    {              
+        id: Math.random().toString(),
+        title: 'note2',
+        created: new Date().toLocaleDateString('uk'),
+        category: 'Idea',
+        content: 'notes2 03.09.2022,02.09.2022'
+    },
+    {              
+        id: Math.random().toString(),
+        title: 'note3',
+        created: new Date().toLocaleDateString('uk'),
+        category: 'Task',
+        content: 'notes3 03.09.2022,02.09.2022'
+    },
+    {              
+        id: Math.random().toString(),
+        title: 'note4',
+        created: new Date().toLocaleDateString('uk'),
+        category: 'Random Thought',
+        content: 'notes4 03.09.2022,02.09.2022'
     },
     ],
     listArchive:[]
@@ -68,8 +89,11 @@ const noteSlice = createSlice({
 
         },
         editNote(state, action:PayloadAction<Note>) {
-            let indexEdit = state.list.indexOf(action.payload);
-            state.list.splice(indexEdit, 1, action.payload);
+            let editNote = state.list.find((note => note.id === action.payload.id));
+            if (editNote) {
+                let indexEdit = state.list.indexOf(editNote)
+                state.list.splice(indexEdit, 1, action.payload);
+            }
         }
     },
 });
