@@ -7,6 +7,7 @@ import TableNotesArchive from './components/tablelist/tablenotes/tablenotesarchi
 
 function App() {
   const [modalActive, setModalActive] = useState(false)
+
   return (
     <div className="container">
       <TableNotesActive/>

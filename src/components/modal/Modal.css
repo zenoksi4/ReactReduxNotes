@@ -13,6 +13,10 @@
     transition: 0.5s;
     
 }
+.modal .content{
+    transition: 0.5s;
+    transform: scale(0.5);
+}
 
 .modal.active{
     opacity: 1;
