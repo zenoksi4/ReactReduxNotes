@@ -13,7 +13,10 @@ interface TableNotesItemProps{
 }
 
 const TableNotesItem: React.FC<TableNotesItemProps> = ({isArchive, note}) => {
-    let datesContent = note.content.match(/\d{2}([.-])\d{2}\1\d{4}/g)?.join(',');
+
+    let datesContent = note.content?.match(/(\d+)([\/.-])(\d+)([\/.-])(\d+)/g)?.join(',');
+
+
 
     return(
         <tr>
