@@ -1,4 +1,3 @@
-import './TableNotesItem.css'
 import { ActiveItemIcons, ArchiveItemIcons } from './TableNotesItemIcons';
 
 interface TableNotesItemProps{
@@ -19,9 +18,9 @@ const TableNotesItem: React.FC<TableNotesItemProps> = ({isArchive, note}) => {
 
 
     return(
-        <tr>
-            <td className="note-title">
-                <div className="icon-title">
+        <tr className='border-b'>
+            <td className="flex items-center ">
+                <div className="p-3 bg-emerald-600 rounded-full m-3 text-slate-50">
                     {note.category === 'Task' && <i className="fa-solid fa-shop"></i>}
                     {note.category === 'Random Thought' && <i className="fa-regular fa-lightbulb"></i>}
                     {note.category === 'Idea' && <i className="fa-solid fa-head-side-virus"></i>}
@@ -29,15 +28,15 @@ const TableNotesItem: React.FC<TableNotesItemProps> = ({isArchive, note}) => {
                 {note.title}
             </td>
 
-            <td>{note.created}</td>
+            <td className='py-3 px-6'>{note.created}</td>
 
-            <td>{note.category}</td>
+            <td className='py-3 px-6'>{note.category}</td>
 
-            <td className="text-ellipsis">{note.content}</td>
+            <td className="py-3 px-6 max-w-[200px] truncate">{note.content}</td>
 
-            <td>{datesContent}</td>
+            <td className='py-3 px-6'>{datesContent}</td>
 
-            <td className="icons">
+            <td className="py-3 px-6 flex ">
 
             {!isArchive && <ActiveItemIcons note = {note}/>}
             

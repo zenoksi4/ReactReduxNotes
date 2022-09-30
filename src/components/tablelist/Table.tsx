@@ -1,4 +1,3 @@
-import './Table.css'
 
 interface TableProps{
     children?: React.ReactNode
@@ -7,7 +6,7 @@ interface TableProps{
 const Table: React.FC<TableProps> = ({children}) => {
 
     return(
-        <table className='note-table'>
+        <table className='table-auto my-6 text-2xl shadow-md rounded-md truncate '>
 
             {children}
         </table>

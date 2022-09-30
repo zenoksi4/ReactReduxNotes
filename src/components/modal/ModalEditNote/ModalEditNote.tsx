@@ -48,24 +48,27 @@ const ModalEditNote: React.FC<ModalEditNoteProps> = ({active, setActive, note}) 
     return(
         <Modal active={active} setActive={setActive}>
             <ModalFormWrapper>
-                <h1>Edit Note</h1>
+                <h1 className='text-center text-4xl font-bold'>Edit Note</h1>
                 {valid && <span>{valid}</span>}
 
                 <form action="" onSubmit={(event) => (handleSubmit(event), {once: true})}>
                     <label htmlFor="">Title</label><br/>
-                    <input type="text" value={title} onChange={(e) => (setTitle(e.target.value), {once: true})}/><br/>
+                    <input className='mb-4 w-full bg-transparent border-b' type="text" value={title} onChange={(e) => (setTitle(e.target.value), {once: true})}/><br/>
 
                     <label htmlFor="">Category</label><br/>
-                    <select itemType="radio" value={category} onChange={(e) => (setCategory(e.target.value), {once: true})}>
+                    <select className='text-black rounded-lg bg-transparent cursor-pointer border-b-2' itemType="radio" value={category} onChange={(e) => (setCategory(e.target.value), {once: true})}>
                         <option value="Task">Task</option>
                         <option value="Random Thought">Random Thought</option>
                         <option value="Idea">Idea</option>
                     </select><br/>
 
                     <label htmlFor="">Note</label><br/>
-                    <input type="text" value={content} onChange={(e) => (setContent(e.target.value), {once: true})} /><br/>
+                    <input className='mb-4 w-full bg-transparent border-b' type="text" value={content} onChange={(e) => (setContent(e.target.value), {once: true})} /><br/>
 
-                    <input type="submit" className='submit-btn'/><br/>
+                    <input type="submit" className='p-4 font-bold text-white ring-emerald-600 
+                        shadow-[inset_0_0_40px_40px_rgb(5,150,105)]
+                        hover:shadow-[inset_0_0_10px_0_rgb(5,150,105),0_0_10px_4px_rgb(5,150,105)] 
+                        hover:text-gray-200 hover:bg-inherit cursor-pointer transition-shadow w-full'/><br/>
                     
                 </form>
             </ModalFormWrapper>

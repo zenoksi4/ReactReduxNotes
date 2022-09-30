@@ -1,12 +1,10 @@
-import './ModalFormWrapper.css'
-
 interface ModalFormWrapperProps{
     children?: React.ReactNode,
 }
 
 const ModalFormWrapper: React.FC<ModalFormWrapperProps> = ({children}) => {
     return(
-        <div className="modal-content">
+        <div className="w-96 p-8 rounded-md bg-[#ffffff5b] backdrop-blur-md text-white text-lg">
             {children}
         </div>
     )
