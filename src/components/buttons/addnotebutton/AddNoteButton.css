@@ -16,7 +16,6 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -30,9 +29,14 @@
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+
 }
 
 .add-note__btn:hover {
     box-shadow: 0 0 10px 0 #009482 inset, 0 0 10px 4px #009482;
     color: #009482;
+}
+
+.wrap{
+    margin: 20px;
 }

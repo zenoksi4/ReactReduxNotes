@@ -1,15 +1,17 @@
 import './AddNoteButton.css'
 
 interface AddNoteButtonProps{
-    setActive: (bol: boolean)=> void,
+    setActive: (bol: boolean) => void,
+    children?: React.ReactNode,
+
 }
 
-const AddNoteButton: React.FC<AddNoteButtonProps> = ({setActive}) => {
+const AddNoteButton: React.FC<AddNoteButtonProps> = ({setActive, children}) => {
 
     return(
-            <div>
+            <div className='wrap'>
                 <a className="add-note__btn" onClick={() => setActive(true)}>
-                    add note
+                    {children}
                 </a>
             </div>
     );
