@@ -6,7 +6,6 @@ import TableNotes from "./TableNotes";
 import TableNotesItem from "./TableNotesItem";
 import store from "../../../store";
 
-
 export default {
     title: 'TableNotesItems',
     component: TableNotesItem,

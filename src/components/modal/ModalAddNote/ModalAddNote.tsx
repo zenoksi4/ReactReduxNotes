@@ -17,6 +17,7 @@ const ModalAddNote: React.FC<AddNoteModalProps> = ({active, setActive}) => {
     const [content, setContent] = useState('')
     const [valid, setValid] = useState('')
 
+
     const handleSubmit = (event:React.FormEvent) => {
         event.preventDefault();
         setValid('')
