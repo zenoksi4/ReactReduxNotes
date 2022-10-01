@@ -1,12 +1,14 @@
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Provider } from "react-redux";
 import Table from "../Table";
 import TableNotes from "./TableNotes";
 import TableNotesItem from "./TableNotesItem";
+import store from "../../../store";
 
 
 export default {
-    title: 'TableNotesItem',
+    title: 'TableNotesItems',
     component: TableNotesItem,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
@@ -16,18 +18,33 @@ export default {
 
   const Template: ComponentStory<typeof TableNotesItem> = (args) => {
     return(
+        <Provider store={store}>
     <Table>
         <TableNotes>
             <TableNotesItem {...args} />
         </TableNotes>
     </Table>
+    </Provider>
     )
 }
 
-  export const Primary = Template.bind({});
+  export const Active = Template.bind({});
   // More on args: https://storybook.js.org/docs/react/writing-stories/args
-  Primary.args = {
+  Active.args = {
     isArchive: false,
+    note: {
+        id: Math.random().toString(),
+        title: 'note1',
+        created: new Date().toLocaleDateString('uk'),
+        category: 'Task',
+        content: 'notes1 03.09.2022,02.09.2022 dww'
+    }
+  };
+
+  export const Archive = Template.bind({});
+  // More on args: https://storybook.js.org/docs/react/writing-stories/args
+  Archive.args = {
+    isArchive: true,
     note: {
         id: Math.random().toString(),
         title: 'note1',

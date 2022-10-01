@@ -1,6 +1,10 @@
 import './TableNotesItem.css'
 import { ActiveItemIcons, ArchiveItemIcons } from './TableNotesItemIcons';
 import '../../../index.css'
+import { MdOutlineOtherHouses } from "react-icons/md";
+import { BiBrain } from "react-icons/bi";
+import { TbBulb } from "react-icons/tb";
+
 interface TableNotesItemProps{
     isArchive: boolean,
     note:{
@@ -22,9 +26,9 @@ const TableNotesItem: React.FC<TableNotesItemProps> = ({isArchive, note}) => {
         <tr>
             <td className="note-title">
                 <div className="icon-title">
-                    {note.category === 'Task' && <i className="fa-solid fa-shop"></i>}
-                    {note.category === 'Random Thought' && <i className="fa-regular fa-lightbulb"></i>}
-                    {note.category === 'Idea' && <i className="fa-solid fa-head-side-virus"></i>}
+                    {note.category === 'Task' && <MdOutlineOtherHouses size={'50px'}/>}
+                    {note.category === 'Random Thought' && <BiBrain size={'50px'}/>}
+                    {note.category === 'Idea' && <TbBulb size={'50px'}/>}
                 </div>
                 {note.title}
             </td>
@@ -39,9 +43,9 @@ const TableNotesItem: React.FC<TableNotesItemProps> = ({isArchive, note}) => {
 
             <td className="icons">
 
-            {/* {!isArchive && <ActiveItemIcons note = {note}/>}
+            {!isArchive && <ActiveItemIcons note = {note}/>}
             
-            {isArchive && <ArchiveItemIcons note = {note}/>} */}
+            {isArchive && <ArchiveItemIcons note = {note}/>}
 
             </td>
 

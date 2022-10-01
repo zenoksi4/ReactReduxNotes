@@ -2,6 +2,9 @@ import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import {useState} from 'react'
 import { archiveNote, removeNote, unArchiveNote } from "../../../store/noteSlice";
 import ModalEditNote from "../../modal/ModalEditNote/ModalEditNote";
+import { BiEditAlt } from "react-icons/bi";
+import { TbArchive, TbArchiveOff } from "react-icons/tb"
+import { FaTrash } from "react-icons/fa";
 
 interface IconsProps{
     note:{
@@ -20,15 +23,15 @@ const ActiveItemIcons: React.FC<IconsProps> = ({note}) => {
     return(
         <>
         <div className="icon" onClick={() => setModalEditActive(true)}>
-            <i className="fa-solid fa-pen-to-square"></i>
-            </div>
+            <BiEditAlt size={'30px'}/>
+        </div>
                 
         <div className="icon" onClick={() => dispatch(archiveNote(note.id))}>
-            <i className="fa-solid fa-folder-plus"></i>
+            <TbArchive size={'30px'}/>
         </div>
 
         <div className="icon" onClick={() => dispatch(removeNote(note.id))}>
-            <i className="fa-solid fa-trash"></i>
+            <FaTrash size={'25px'}  />
         </div>
         {modalEditActive && <ModalEditNote active={modalEditActive} setActive={setModalEditActive} note = {note}/>}
         </>
@@ -41,7 +44,7 @@ const ArchiveItemIcons: React.FC<IconsProps> = ({note}) => {
     return(
   
         <div className="icon" onClick={() => dispatch(unArchiveNote(note.id))}>
-            <i className="fa-solid fa-folder-plus"></i>
+            <TbArchiveOff size={'30px'}/>
         </div>
 
     );

@@ -5,11 +5,10 @@
 }
 
 td .icon-title {
-    padding: 10px;
     margin: 10px;
     color: #ffffff;
     background-color: #009482;
-    border-radius: 100px;
+    border-radius: 30px;
 }
 
 .text-ellipsis {
@@ -24,7 +23,9 @@ td .icon-title {
 .icons {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    min-height: 100;
+
 }
 
 .icon {
@@ -42,7 +43,7 @@ td .icon-title {
     color: #adadad;
 }
 
-.icon i{
+.icon {
     cursor: pointer;
 }
 
